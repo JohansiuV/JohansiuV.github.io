@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet Personal - Johan</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="intranet.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <h1>BIENVENIDO A TU INTRANET, <span>JOHAN</span>🔥</h1>
+    <p>Espacio privado para tu crecimiento físico y mental.</p>
+    <button onclick="window.location.href='index.html'" class="btn-logout">
+        <i class="fas fa-sign-out-alt"></i> Salir
+    </button>
+</header>
+
+<section class="grid-container">
+
+    <!-- ENTRENAMIENTO -->
+    <div class="card neon">
+        <h2><i class="fas fa-dumbbell"></i> Rutina de Entrenamiento</h2>
+        <ul>
+            <li>Pecho + tríceps — Lunes</li>
+            <li>Espalda + bíceps — Martes</li>
+            <li>Piernas + glúteo — Miércoles</li>
+            <li>Hombros + trapecio — Jueves</li>
+            <li>Full Body — Viernes</li>
+        </ul>
+    </div>
+
+    <!-- CALENDARIO -->
+    <div class="card neon">
+        <h2><i class="fas fa-calendar"></i> Calendario Activo</h2>
+        <p id="date"></p>
+        <p class="mini">Objetivo diario: mínimo 30 minutos de movimiento.</p>
+    </div>
+
+    <!-- METAS -->
+    <div class="card neon">
+        <h2><i class="fas fa-bullseye"></i> Tus Metas</h2>
+        <textarea id="metasArea" placeholder="Escribe tus metas aquí..."></textarea>
+        <button onclick="guardarMetas()" class="btn-save">
+            Guardar
+        </button>
+    </div>
+
+    <!-- CRECIMIENTO Y CONOCIMIENTO -->
+    <div class="card neon">
+        <h2><i class="fas fa-brain"></i> Crecimiento y Conocimiento</h2>
+        <p>📌 Lectura mínima diaria de 15 min</p>
+        <p>📌 Aprende algo nuevo cada semana</p>
+        <p>📌 Haz anotaciones de conceptos claves</p>
+    </div>
+
+    <!-- NOTAS PRIVADAS -->
+    <div class="card neon">
+        <h2><i class="fas fa-lock"></i> Notas Privadas</h2>
+        <textarea id="notasArea" placeholder="Escribe tus notas personales..."></textarea>
+        <button onclick="guardarNotas()" class="btn-save">
+            Guardar
+        </button>
+    </div>
+
+    <!-- MOTIVACIÓN -->
+    <div class="card neon">
+        <h2><i class="fas fa-fire"></i> Motivación del Día</h2>
+        <h3 id="frase"></h3>
+    </div>
+
+</section>
+
+<script src="intranet.js"></script>
+
+</body>
+</html>

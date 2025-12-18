@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloc de Notas Personal</title>
+
+    <style>
+        body {
+            background: #0f0f0f;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e1e;
+            border-bottom: 2px solid #00ffea;
+        }
+        header h1 {
+            margin: 0;
+            color: #00ffea;
+        }
+        header a {
+            text-decoration: none;
+            background: #00ffea;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 12px;
+        }
+        header a:hover {
+            background: #00ccb7;
+        }
+        textarea {
+            width: 100%;
+            height: calc(100vh - 130px);
+            background: #151515;
+            color: #fff;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 18px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        footer {
+            background: #1e1e1e;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+            border-top: 2px solid #00ffea;
+        }
+        .saved {
+            color: #00ffea;
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>📝 Bloc de Notas Personal</h1>
+        <a href="index.html">⬅ Volver</a>
+    </header>
+
+    <textarea id="notepad" placeholder="Escribe aquí tus notas..."></textarea>
+
+    <footer>
+        <p class="saved" id="status">✔ Todo guardado automáticamente</p>
+    </footer>
+
+    <script>
+        const notepad = document.getElementById("notepad");
+        const status = document.getElementById("status");
+
+        // Cargar notas guardadas
+        if (localStorage.getItem("blocNotas")) {
+            notepad.value = localStorage.getItem("blocNotas");
+        }
+
+        // Guardar texto al escribir
+        notepad.addEventListener("input", () => {
+            localStorage.setItem("blocNotas", notepad.value);
+            status.textContent = "💾 Guardado...";
+            setTimeout(() => status.textContent = "✔ Todo guardado automáticamente", 800);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "johansiuv-github-io",
+  "version": "1.0.0",
+  "description": "Proyecto web con CI/CD y pruebas automatizadas",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "JohansiuV",
+  "license": "MIT"
+}
